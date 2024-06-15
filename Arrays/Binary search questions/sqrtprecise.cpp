@@ -1,55 +1,58 @@
-#include<iostream>
+#include <iostream> 
+
 using namespace std;
 
- long long int sqrtInteger(int n) {
-        
-        int s = 0;
-        int e = n;
-        long long int mid = s + (e-s)/2;
-        
-        long long int ans = -1;
-        while(s<=e) {
-            
-            long long int square = mid*mid;
-            
-            if(square == n)
-                return mid;
-            
-            if(square < n ){
-                ans = mid;
-                s = mid+1;
-            }
-            else
-            {
-                e = mid - 1;
-            }
-            mid = s + (e-s)/2;
-        }
-        return ans;
-    }
-
-double morePrecision(int n, int precision, int tempSol) {
+long long int sqrtInteger(int x){
     
+    int s = 0;
+    int e = x;
+    long long  mid = s +(e-s)/2;
+
+    long long ans = -1 ;
+
+    while(s<=e){
+        long long square = mid * mid;
+
+        if(square == x)
+            return mid;
+
+        if(square < x){
+            ans = mid;
+            s = mid +1;
+        }
+        else 
+            e = mid -1;
+
+        mid = s + (e-s)/2;
+    }
+    return ans;
+}
+
+double sqrtprecise(int x,int precision, int temp_sol){
+
     double factor = 1;
-    double ans = tempSol;
+    double ans = temp_sol;
 
-    for(int i=0; i<precision; i++) {
+    for(int i=0;i<precision;i++){
         factor = factor/10;
-
-        for(double j=ans; j*j<n; j= j+factor ){
+        for(double j=ans;j*j<x; j= j + factor){
             ans = j;
         }
     }
     return ans;
 }
 
-int main() {
+int main(){
+    cout << "Enter the number you want square root of : " ;
     int n;
-    cout <<" Enter the number " << endl;
     cin >> n;
+    cout << "Enter precision : " ;
+    int precision;
+    cin >> precision;
 
-    int tempSol = sqrtInteger(n);
-    cout <<" Answer is " << morePrecision(n, 3, tempSol) << endl;
+    int tempsol = sqrtInteger(n);
+
+    cout << "Square root : " << sqrtprecise(n,precision,tempsol)   << endl ;
 
     return 0;
 }
