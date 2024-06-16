@@ -74,17 +74,21 @@ int main(){
     vector<int> arr = {10,20,30,40};
     int n=4;
     int m=2;
-    int input;
+    int input ;
+    int k=1;
 
-    // cout << "Enter the number of students : ";
-    // cin >> m;
+    cout << "Enter the number of students : ";
+    cin >> m;
     
-    // cout << "Enter the number of books : " ;
-    // cin >> n;
+    cout << "Enter the number of books : " ;
+    cin >> n;
 
-    // cout << "Enter the number of pages : ";
-    // while((cin >> input))
-    //     arr.push_back(input);
+    cout << "Enter the number of pages : ";
+    while((cin >> input) && k<n){
+        arr.push_back(input);
+        k++;
+    }
+        
 
     
     cout << allocatebooks(arr,n,m) << endl;
