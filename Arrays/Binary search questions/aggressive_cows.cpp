@@ -11,3 +11,6 @@ Print the maximum possible minimum distance.*/
 
 // Explanation: The maximum possible minimum distance will be 2 when 2 cows are placed at positions {1, 3}.
 // Here distance between cows is 2.
+
+
+
