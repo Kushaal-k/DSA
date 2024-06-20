@@ -43,17 +43,23 @@ int getPivot(int arr[], int n){
 }
 
 int main(){
-    int arr[6] = {5,6,1,2,3,4};
-
-    int pivot = getPivot(arr,6);
+    // int arr[6] = {5,6,1,2,3,4};
+    int arr[2] = {1,3};
+    int n = 2;
+    int pivot = getPivot(arr,2);
 
     int target;
     cout << "Enter the target : ";;
     cin >> target;
 
-    if(arr[pivot] <= target && target <= arr[5]){
-        if(Binary_search(arr,6,pivot,target)!=-1)
-            cout << "The element is present in array on index " << Binary_search(arr,6,pivot,target) << endl;
+    for(int i=0;i<n;i++){
+        if(arr[i]==target)
+            return i;
+    }
+
+    if(arr[pivot] <= target && target <= arr[n-1]){
+        if(Binary_search(arr,n,pivot,target)!=-1)
+            cout << "The element is present in array on index " << Binary_search(arr,n,pivot,target) << endl;
     }
     
     else if(Binary_search(arr,pivot-1,0,target)!=-1)

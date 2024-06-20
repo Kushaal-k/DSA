@@ -22,7 +22,7 @@ int getPivot(int arr[], int n){
 }
 
 int main(){
-    int arr[6] = {5,6,1,2,3,4};
+    int arr[6] = {1,2,3,4,5,6};
 
     cout << "The sorted array is rotated " << getPivot(arr,6) << " times."<< endl;
 }
