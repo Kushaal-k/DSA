@@ -10,16 +10,18 @@ int main(){
 
     int m,n;
 
-    cout << "Enter size of first array : " << endl;
+    cout << "Enter size of first array : " ;
     cin >> m;
 
+    cout << "Enter elements : ";
     int *a1 = new int[m];
     for(int i=0;i<m;i++)
         cin >> *(a1+i);
 
-    cout << "Enter size of second array : " << endl;
+    cout << "Enter size of second array : " ;
     cin >> n;
 
+    cout << "Enter elements : ";
     int *a2 = new int[n];
     for(int i=0;i<n;i++)
         cin >> *(a2+i);
