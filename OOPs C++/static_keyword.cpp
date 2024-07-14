@@ -9,9 +9,11 @@ class Hero{
 
     public:
     char level;
+    // static keyword is used when we need to create a datatype that is independent of object 
+    static int Timetocomplete;
 
     Hero(){
-
+        cout << "Default constructor called" << endl;
     }
 
     // A constructor has no return type 
@@ -39,21 +41,21 @@ class Hero{
         cout << "Level is " << this-> level << endl;
         cout << "Health is " << this->health << endl;
     }
+
+    //Static functions
+    static int random(){
+        // static function can only access static datatype 
+        return Timetocomplete;
+    }
 };
 
-int main(){
 
-    Hero h1(70,'A');
-    // Copying an constructor 
-    Hero h3(h1);
-    h3.print();
+// Initialization of static datatype 
+int Hero::Timetocomplete = 5;
 
-    Hero h4(h1);
-    h4.print();
+int main (){
 
-    // Assignment operator 
-    Hero h5 = h1;
-    h5.print();
-
+    cout << Hero::Timetocomplete << endl;
+    cout << Hero::random() << endl;
     return 0;
 }

@@ -11,7 +11,7 @@ class Hero{
     char level;
 
     Hero(){
-
+        cout << "Default constructor called" << endl;
     }
 
     // A constructor has no return type 
@@ -39,21 +39,23 @@ class Hero{
         cout << "Level is " << this-> level << endl;
         cout << "Health is " << this->health << endl;
     }
+
+    // Destructor is use to de-allocae memory 
+    // destructor also dont have a return type.
+    
+    ~Hero(){
+        cout << "Destructor called" << endl;
+    }
 };
 
 int main(){
+    // default destructor is called for static allocated object
+    Hero h1;
 
-    Hero h1(70,'A');
-    // Copying an constructor 
-    Hero h3(h1);
-    h3.print();
+    Hero *h2 = new Hero;
+    delete h2;
+    
 
-    Hero h4(h1);
-    h4.print();
-
-    // Assignment operator 
-    Hero h5 = h1;
-    h5.print();
 
     return 0;
 }
