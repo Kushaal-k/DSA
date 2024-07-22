@@ -13,6 +13,14 @@ class Node{
         this -> data = data;
         this-> next = NULL;
     }
+
+    //Destructor
+    ~Node(){
+        if(this -> next != NULL){
+            delete next;
+            this->next = NULL;
+        }
+    }
 };
 
 int main(){

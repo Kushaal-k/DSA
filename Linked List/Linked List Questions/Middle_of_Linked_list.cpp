@@ -1,3 +1,5 @@
+// #LC 876
+
 #include <iostream> 
 
 using namespace std;
