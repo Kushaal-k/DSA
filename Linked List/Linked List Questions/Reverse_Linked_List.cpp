@@ -29,6 +29,20 @@ private:
         reverse(head,forward,curr);
         curr->next = prev;
     }
+    ListNode* reverse(ListNode* head){
+        ListNode* curr = head;
+        ListNode* prev = NULL;
+        ListNode* next = NULL;
+
+        if(curr!= NULL){
+            next = curr ->next;
+            curr -> next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
 public:
     ListNode* reverseList(ListNode* head) {
 
